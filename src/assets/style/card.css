@@ -1,0 +1,10 @@
+body {
+    padding: 0;
+    margin: 0
+}
+
+.container.card > .card > img {
+    width: 100%;
+    box-shadow: 1px 3px 10px 1px  white;
+    margin-bottom: 15px;
+}

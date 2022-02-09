@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { getHeroes } from '../api/index'
+import Card from '../cards/index'
+import '../../assets/style/main.css'
 
 export default function Main() {
 
   const [heroes, setHeroes] = useState([]);
+
+  const returnHeroes = heroes.map((hero) => {
+    return <Card key={hero.id} image={hero.images.md} name={hero.name}/>
+})  
 
     useEffect(() => {
         let mounted = true;
@@ -18,10 +24,8 @@ export default function Main() {
     }, [])
 
     return (
-        <div>
-            <ul>
-                {heroes.map(item => <li key={item.id}> <img src={item.images.md}></img></li>)}
-            </ul>
+        <div className="main-card-div">
+            {returnHeroes}
         </div>
     )
 }
